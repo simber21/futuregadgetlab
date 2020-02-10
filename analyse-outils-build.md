@@ -68,3 +68,14 @@ Si on fait une comparaison de la documentation sur le “test de plugin” sur [
 <h3>Gagnant: GRADLE</h3>
 
 La documentation de Gradle est plus moderne que Maven où chaque tutoriel est bien expliqué et bien détaillé. Elle semble plus moderne et plus récente. Mais d’un autre coté, la documentation de Maven est plus riche et parfois même plus compliqué à comprendre. C’est pour cette raison que plusieurs développeurs préfèrent commencer avec Gradle plutôt qu’avec Maven au point que les forums et la communauté en ligne est plus active sur cet outil.
+
+<h2>Références</h2>
+
+(https://gradle.org/maven-vs-gradle/)
+(https://gradle.org/gradle-vs-maven-performance/)
+(https://dzone.com/articles/gradle-vs-maven)
+(https://stackify.com/gradle-vs-maven/)
+(https://www.baeldung.com/ant-maven-gradle)
+(https://guides.gradle.org/testing-gradle-plugins/)
+(https://maven.apache.org/plugin-developers/plugin-testing.html)
+(https://gradle.org/features/#performance)
