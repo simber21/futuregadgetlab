@@ -71,11 +71,11 @@ La documentation de Gradle est plus moderne que Maven où chaque tutoriel est bi
 
 <h2>Références</h2>
 
-(https://gradle.org/maven-vs-gradle/)
-(https://gradle.org/gradle-vs-maven-performance/)
-(https://dzone.com/articles/gradle-vs-maven)
-(https://stackify.com/gradle-vs-maven/)
-(https://www.baeldung.com/ant-maven-gradle)
-(https://guides.gradle.org/testing-gradle-plugins/)
-(https://maven.apache.org/plugin-developers/plugin-testing.html)
-(https://gradle.org/features/#performance)
+https://gradle.org/maven-vs-gradle/ \
+https://gradle.org/gradle-vs-maven-performance/ \
+https://dzone.com/articles/gradle-vs-maven \
+https://stackify.com/gradle-vs-maven/ \
+https://www.baeldung.com/ant-maven-gradle \
+https://guides.gradle.org/testing-gradle-plugins/ \
+https://maven.apache.org/plugin-developers/plugin-testing.html \
+https://gradle.org/features/#performance \
