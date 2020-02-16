@@ -1,4 +1,15 @@
+
 <h1> Comparaisons entre Maven et Gradle </h1>
+
+<h2> Introduction à Gradle </h2>
+
+Gradle est un logiciel libre sous la license Apache 2.0 qui permet l'automatisation de build de projets Java. Cet outil à été introduit au public en 2007 et en est maintenant à la version 6.0 en date du 8 novembre 2019. 
+
+Les instructions et configurations sont déclarés dans un fichier nommé build.gradle à la racine du projet Java. Ces instructions sont écrites en language Groovy ou Kotlin. Le flux d'exécution est exprimé sous forme de graphe orienté acyclique, ce qui permet de déclarer l'ordre d'exécution et l'interdépendence entre chaque tâches. 
+
+Gradle est un outil très flexible qui permet à l'utilisateur de créer des fonctions pour paramétriser et simplifier les tâches à exécuter. Son écosystème d'extensions ("plugins") est riche et complet et permet d'intégrer facilement d'autres outils tels que JUnit et Sonarqube aux tâches d'exécution.
+
+Le développement de Gradle est très actif. Avec plus de 400 contributeurs et 70 000 commits sur Github à ce jour, il est clair que son futur est prometteur dans l'écosystème de développement Java.
 
 <h2> Critéres de comparaison: </h2>
 
@@ -79,3 +90,4 @@ https://www.baeldung.com/ant-maven-gradle \
 https://guides.gradle.org/testing-gradle-plugins/ \
 https://maven.apache.org/plugin-developers/plugin-testing.html \
 https://gradle.org/features/#performance
+https://en.wikipedia.org/wiki/Gradle
