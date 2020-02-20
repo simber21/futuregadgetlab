@@ -3,7 +3,7 @@
 
 <h2> Introduction à Maven </h2>
 
-Apache Maven est un logiciel libre de gestion et l'automatisation de projets Java. Il est maintenu par l'Apache Software Foundation et a débuté comme sous-projet du défunt projet Jakarta Turbine en 2002 pour ensuite être officiellement publié comme logiciel en 2004. En date de ce rapport (janvier 2020), la version 3.6.3 est la version courante.
+Apache Maven est un logiciel libre de gestion et automatisation de projets Java. Il a été crée et est présentment maintenu par l'organisme à but non lucratif Apache Software Foundation. En 2002, Maven a débuté comme sous-projet du défunt projet Jakarta Turbine pour ensuite être officiellement publié comme logiciel en 2004. En date de ce rapport (janvier 2020), la version 3.6.3 est la version courante.
 
 Maven fournie un système de build uniforme en utilisant le Project Object Model (POM) et un ensemble de plugin partagés par les projets utilisant Maven. Les instructions et configurations sont rédigés dans le fichier pom.xml
 
