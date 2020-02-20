@@ -3,12 +3,8 @@ build
 target
 bin
 .idea
-<<<<<<< HEAD
-*.swp
-=======
 __MACOS
 *.swp
 .DS_Store
 .gradle
 
->>>>>>> origin/master
