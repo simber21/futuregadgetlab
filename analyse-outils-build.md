@@ -25,14 +25,14 @@ Ce critère montre si un outil nécessite une connaissance avancée, il est faci
 
 * <h3> Maven </h3> 
 
-Apprendre à utiliser Maven n’est pas très difficile. Si on respecte ses conventions, tout sera facile et simple mais dès qu’on veut sortir un peu de ce système, qu’on veut utiliser d’autres outils ou faire quelque chose en dehors de cet outil, ça devient vite complexe parce qu'on est très habitué à ce système de Maven.
+Apprendre à utiliser Maven n’est pas très difficile. Si l'on respecte ses conventions, tout sera facile et simple mais dès que l’on veut sortir un peu de ce système, que l’on veut utiliser d’autres outils ou faire quelque chose en dehors de cet outil, ça devient vite complexe parce que l'on est très habitué à ce système de Maven.
 
-Le grand défi est de s’habituer à utiliser et comprendre les fonctionnalitées de pom.xml qui est son fichier de configuration. Ce fichier XML est trop fragile et verbeux, par exemple pour la définition des dépendances, il est difficile de créer un pom.xml de zéro. Les build scripts sont compliqués à comprendre car il s’agit de l’utilisation de grands nombres de plugins et des déclarations même pour réaliser certaines tâches simples. Aussi, la personnalisation des goals est difficile sur Maven, il faut que tu crées ton propre plugin.
+Le grand défi est de s’habituer à utiliser et comprendre les fonctionnalitées de pom.xml qui est son fichier de configuration. Ce fichier XML est trop fragile et verbeux. Par exemple pour la définition des dépendances, il est difficile de créer un pom.xml de zéro. Les build scripts sont compliqués à comprendre car il s’agit de l’utilisation de grands nombres de plugins et des déclarations même pour réaliser certaines tâches simples. Aussi, la personnalisation des goals est difficile sur Maven, il faut créer son propre plugin.
 
 
 * <h3> Gradle </h3>
 
-Gradle est un outil ou les scripts de build sont écrits dans un langage Java : Groovy. Avec un peu de connaissance sur cet langage, qui est très peu verbeux, on peut facilement commencer à l’utiliser. Les builds scripts sont facile à lire et à comprendre. En plus, Gradle permet d'utiliser un grand nombre de ressources propres à Ant ou Maven (comme la gestion des build.xml, pom.xml, repositories...) cela permet aux développeurs, qui ont un background sur ces outils de build, de commencer à travailler directement.
+Gradle est un outil où les scripts de build sont écrits dans un langage Java : Groovy. Avec un peu de connaissances sur ce langage, qui est très peu verbeux, on peut facilement commencer à l’utiliser. Les builds scripts sont facile à lire et à comprendre. En plus, Gradle permet d'utiliser un grand nombre de ressources propres à Ant ou Maven (comme la gestion des build.xml, pom.xml, repositories...) cela permet aux développeurs, qui ont un background sur ces outils de build, de commencer à travailler directement.
 Gradle peut aussi réutiliser et compléter une infrastructure basée sur Ant, Ivy ou Maven. En effet, Ant est intégré dans Gradle ce qui nous donne la possibilité de faire des builds entièrement en Ant. Contrairement à Maven, la modification du cycle de vie d'un projet pour ajouter ou supprimer des étapes de construction, ou encore en insérer de nouvelles est simple en Gradle. La personnalisation des goals en Gradle est plus facile que Maven.
 
 <h3> Gagnant:  GRADLE </h3>
@@ -41,7 +41,7 @@ Avec un peu de background en Maven ou Ant et un peu de connaissance en Groovy (l
 
 <h2> Vitesse d'exécution</h2>
 
-La vitesse d'exécution est le clé principale qui va faire la différence entre un outil qui sera choisi par plusieurs entreprises et un autre outil qui sera la pour les petits projets.
+La vitesse d'exécution est la clé principale qui va faire la différence entre un outil qui sera choisi par plusieurs entreprises et un autre outil qui sera la pour les petits projets.
 
 Coté performance, les deux outils implémentent le système de multi-module builds qui s'exécute parallèlement pour gagner du temps. Moins de temps sur les builds, moins de dépenses pour les entreprises et plus de projets livrés à temps.
 
@@ -52,22 +52,22 @@ De plus, Maven nous donne la capacité de faire les tests en parallèle, moins d
 
 * <h3>Gradle</h3>
 
-Gradle favorise l’utilisation d’un deamon de compilation continuelle et incrémentale, cet outil vérifie quel task est changé, si rien n’est modifié, le task n’est pas exécuté ce qui nous donne la possibilité de faire des builds en moins de temps. De plus, puisque Gradle utilise sa propre langage Java, Groovy au lieu de XML pour ses scripts, il donne la possibilité d'être plus flexible que Maven, mais les builds deviennent plus lents quand les projets sont plus larges, parce que le script Groovy doit être compilé pour chaque build.
+Gradle favorise l’utilisation d’un daemon de compilation continuelle et incrémentale, cet outil vérifie quelle tâche est modifiée. Si rien n’est modifié, la tâche n’est pas exécutée ce qui nous donne la possibilité de faire des builds en moins de temps. De plus, puisque Gradle utilise son propre langage Java (Groovy) au lieu de XML pour ses scripts, il donne la possibilité d'être plus flexible que Maven. Par contre, les builds deviennent plus lents quand les projets sont plus larges, à cause que le script Groovy doit être compilé pour chaque build.
 
 <h3> Gagnant:  GRADLE </h3>
 
-Gradle est surprenamment performant grâce à des builds continues et composés son deamon qui favorise une compilation rapide et incrémenté pour les classes Java. Il évite aussi de vérifier les tasks qui n’étaient pas modifiés entre les builds. Certains le considère comme un outil plus intelligent que Maven avec des meilleurs optimisations.
+Gradle est surprenamment performant grâce à des builds continues et composés son daemon qui favorise une compilation rapide et incrémentée pour les classes Java. Il évite aussi de vérifier les tasks qui n’étaient pas modifiés entre les builds. Certains le considère comme un outil plus intelligent que Maven avec des meilleurs optimisations.
 
 <h2>Documentation et communauté en ligne</h2>
 
 Pour commencer à utiliser un outil rapidement, la documentation et la communauté en ligne sont nécessaires pour faciliter la compréhension des fonctionnalités et des capacités de cet outil.
 
-La documentation est très essentielle pour comprendre comment un outil fonctionne et qu’est ce qu’on peut faire avec. Avec les ressources qu’on trouve en ligne et les tutoriels disponibles, il est préférable qu’ils soient facile à lire et à comprendre rapidement que d'être compliqués. En plus de ça, la communauté en ligne joue un rôle important à répondre aux questions de plusieurs autres développeurs qui travaille peut être sur un projet similaire.
+La documentation est très essentielle pour comprendre comment un outil fonctionne et ce que l’on peut faire avec. Avec les ressources que l'on trouve en ligne et les tutoriels disponibles, il est préférable qu’ils soient facile à lire et à comprendre rapidement que d'être compliqués. En plus de ça, la communauté en ligne joue un rôle important à répondre aux questions de plusieurs autres développeurs qui travaille peut être sur un projet similaire.
 
 
 * <h3>Maven</h3>
 
-La documentation de Maven et ses ressources sont plus riches puisque Maven est sorti en 2004, plus ancien que Gradle. Les ressources de Maven sont très larges et plus extensives. On y trouve presque toutes les projets Open Source Java. En fait, Maven est très populaire dans la communauté Open Source, au point que plusieurs nouveaux projets l’utilisent comme l’outil de construction de choix. Puisque la communauté Open Source est plutôt grande et généralement très utile, il existe de nombreux guides et tutoriels faites par des sources third-party sur Maven. Malgré ça, les ressources de Maven manquent d’exemples et de détails, mais on y trouve presque tout ce qu’on veut de ressources comme des plugins, des extensions et des exemples.
+La documentation de Maven et ses ressources sont plus riches puisque Maven est sorti en 2004, plus ancien que Gradle. Les ressources de Maven sont très larges et plus extensives. On y trouve presque tout les projets Open Source Java. En fait, Maven est très populaire dans la communauté Open Source, au point que plusieurs nouveaux projets l’utilisent comme l’outil de construction de choix. Puisque la communauté Open Source est plutôt grande et généralement très utile, il existe de nombreux guides et tutoriels faites par des sources third-party sur Maven. Malgré ça, les ressources de Maven manquent d’exemples et de détails, mais on y trouve presque tout ce qu’on veut de ressources comme des plugins, des extensions et des exemples.
 La communauté en ligne est plutôt passive qu’active, puisque Maven est sorti avant Gradle, et plusieurs autres outils de builds sont introduites au marché après les forums sont devenus inactifs et plusieurs développeurs ont changé vers d’autre outil de build en trouvant Gradle plus facile à apprendre que Maven.
 
 
