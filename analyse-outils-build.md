@@ -1,6 +1,24 @@
 
 <h1> Comparaisons entre Maven et Gradle </h1>
 
+<<<<<<< HEAD
+=======
+<h2> Introduction à Maven </h2>
+
+Apache Maven est un logiciel libre de gestion et automatisation de projets Java. Il a été crée et est présentement maintenu par l'organisme sans but lucratif Apache Software Foundation. En 2002, Maven a débuté comme sous-projet du défunt projet Jakarta Turbine pour ensuite être officiellement publié comme logiciel en 2004. En date de ce rapport (janvier 2020), la version 3.6.3 est la version courante.
+
+Maven réduit le temps de configuration des projets en fournissant un écosystème complet au programmeur. Les projets sur Maven sont configurés en utilisant un Project Object Model (POM) et un ensemble de plugin partagés parmi eux. Les instructions et configurations sont rédigés en XML et entreposés dans le fichier pom.xml. Ceci permet de facilement de gérer et ajouter les dépendances d'un projet dans un seul fichier. L'écosystème fournie par Maven comprend aussi une structure de répertoire avec une arborescence et nomenclature préétablie ainsi qu'un cycle de vie (build lifecycle) intégré. 
+
+Maven est un outil qui est conçu pour offrir un certain niveau de flexibilité. Puisque le processus de construction est clairement défini, l'utilisateur a seulement besoin d'apprendre un petit ensemble de commandes pour construire un projet. 
+
+<h3> Sources </h3>
+
+https://maven.apache.org/background/history-of-maven.html \
+https://maven.apache.org/what-is-maven.html \
+http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html 
+
+
+>>>>>>> master
 <h2> Introduction à Gradle </h2>
 
 Gradle est un logiciel libre sous la license Apache 2.0 qui permet l'automatisation de build de projets Java. Cet outil à été introduit au public en 2007 et en est maintenant à la version 6.0 en date du 8 novembre 2019. 
@@ -82,6 +100,10 @@ La documentation de Gradle est plus moderne que Maven où chaque tutoriel est bi
 
 <h2>Références</h2>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 https://gradle.org/maven-vs-gradle/ \
 https://gradle.org/gradle-vs-maven-performance/ \
 https://dzone.com/articles/gradle-vs-maven \

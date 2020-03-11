@@ -13,7 +13,7 @@ sourceCompatibility = '1.11'
 targetCompatibility = '1.11'
 
 task copy(type: Copy, group: "Custom", description: "Copie les sources dans le repertoire dest") {
-  from "src"
+  from "minischeme"
   into "dest"
 }
 

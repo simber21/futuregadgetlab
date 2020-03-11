@@ -3,4 +3,8 @@ build
 target
 bin
 .idea
+__MACOS
+*.swp
+.DS_Store
+.gradle
 
