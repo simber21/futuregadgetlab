@@ -18,7 +18,7 @@ task copy(type: Copy, group: "Custom", description: "Copie les sources dans le r
 }
 
 task zip(type: Zip, group: "Archive", description: "Les sources sont archivees dans un fichier zip") {
-  from "src"
+  from "minischeme"
   setArchiveFileName "futuregadgetlab1.0"
 }
 
