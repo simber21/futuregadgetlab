@@ -13,6 +13,7 @@ plugins {
     id 'application'
     // plugin ShadowJar pour créer un jar exécutable avec toutes les dépendences.
     id 'com.github.johnrengelman.shadow' version '5.2.0'
+    // Plugin pour l'outil d'analyse PMD
     id 'pmd'
 }
 
@@ -24,6 +25,7 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
+
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
