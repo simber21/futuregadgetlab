@@ -23,19 +23,33 @@ Plus de 400 modèles de bugs peuvent être reconnus par SpotBug.
 https://spotbugs.github.io/index.html#using-spotbugs
 http://findbugs.sourceforge.net/ 
 
-<h2>Fonctionnalité</h2>
+<h2>Critères de comparaison</h2>
 
-La fonctionnalité est donc les tâches que le programme est capable d'éffectuer. Il est important de choisir un outil d'analyse de code qui offre des fonctionnalités qui correspondent aux besoins du projet. Pour ce projet, un outil qui offre des fonctions efficaces mais facile d'utilisation, un rapport de données compréhensible et qui possède une certaine flexibilité sont les qualités recherchées.
+* La fonctionnalité du programme
+* Facilité d'installation
+* La licence utilisée
+
+<h2>La fonctionnalité du programme</h2>
+
+La fonctionnalité du programme sont les tâches qu'il peut éffectuer qui sont les plus pertinentes au projet. Il est important de choisir un outil d'analyse de code qui offre des fonctionnalités qui correspondent aux besoins de l'équipe. Pour ce projet, un outil qui offre des options efficaces mais facile d'utilisation, un rapport de données compréhensible et qui possède une certaine flexibilité sont les qualités recherchées.
 
 En évaluant les programmes d'analyse statique selon ce critère, on identifiera lequel correspond le plus au projet. 
 
+* <h3>PMD</h3>
+
 PMD est un programme qui scan le code source et trouve les problèmes potentiels, principale fonctionnalité recherchée. Il peut vérifier si le code source est conforme à une convention de nom de variable établie jusqu'à être capable d'identifier du code ou des variables non utilisées et aussi la complexité du code, tout en vérifiant les bugs. De plus, il vient avec un outil qui identifie le code dupliqué.
 
-Il s'intègre facilement avec une vaste sélection d'éditeurs et outils de build en plus de pouvoir s'exécuter sur ligne de commande. L'outil est capable de générer un rapport clair et puisque c'est possible de l'afficher sur une page web, facile d'accès. 
+Il s'intègre facilement, sous forme de plugin, avec une vaste sélection d'éditeurs et outils de build en plus de pouvoir s'exécuter sur ligne de commande. L'outil est capable de générer un rapport clair et puisque c'est possible de l'afficher sur une page web, facile d'accès. 
 
-SpotBugs scanne le code source à la recherche de bugs sous plus de 400 modèles différents. 
+* <h3>SpotBugs</h3>
+
+SpotBugs scanne le code source à la recherche de bugs sous plus de 400 modèles différents. Les modèles sont séparés en plusieurs catégories, classés par sévérité des bugs potentiels, du moins important au plus important en passant par la performance et le code douteux. SpotBugs s'intègre aussi avec une variété d'éditeurs et d'outils de build sous forme de plugin.
+
+
+
 <h3>Sources</h3>
 https://blog.codacy.com/which-java-static-code-analysis-tools-should-i-use/
+https://spotbugs.readthedocs.io/en/latest/gradle.html
 
 
 
