@@ -13,6 +13,7 @@ plugins {
     id 'application'
     // plugin ShadowJar pour créer un jar exécutable avec toutes les dépendences.
     id 'com.github.johnrengelman.shadow' version '5.2.0'
+    id 'pmd'
 }
 
 version = '1.0'

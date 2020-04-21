@@ -13,8 +13,8 @@ import static java.util.stream.Collectors.joining;
 
 class EvaluatorTests {
 
-  private Evaluator evaluator;
-  private Map<String, Object> env;
+  private transient Evaluator evaluator;
+  private transient Map<String, Object> env;
 
   @BeforeEach void init() {
     this.evaluator = new Evaluator();
