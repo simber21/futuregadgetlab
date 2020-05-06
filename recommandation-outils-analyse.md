@@ -11,21 +11,11 @@ L'utilisateur peut utiliser les options de vérification disponibles ou créer l
 sont les définitions données les plus logique. L'outil est principalement connu sous le nom "PMD" avec le slogan "Don't shoot the messenger" intégré dans le logo.
 
 
-<h3>Sources</h3>
-https://pmd.github.io/latest/#overview
-https://pmd.github.io/
-https://www.datarespons.com/code-quality-assurance-with-pmd/
-
-
 <h2>SpotBugs</h2>
 
 SpotBugs est un outil d'analyse statique qui passe en revu bytecode en langage Java et trouve les bugs caché dans le code source. C'est un programme qui cherche pour des instances de code qui sont plus à risque de causer des bugs. SpotBugs est distribué sous la GNU Lesser General Public License. SpotBugs est le successeur spirituel de FindBugs, un programme d'analyse statique avec la marque de commerce de L'Université du Maryland. 
 
 Plus de 400 modèles de bugs peuvent être reconnus par SpotBug. 
-
-<h3>Sources</h3>
-https://spotbugs.github.io/index.html#using-spotbugs
-http://findbugs.sourceforge.net/ 
 
 <h2>Critères de comparaison</h2>
 
@@ -55,9 +45,6 @@ SpotBugs scanne le bytecode du code source, après la compilation, à la recherc
 
 Bien que SpotBugs possède une librairie vaste de modèle de bugs, PMD lui, analyse le code source directement. Aussi, il ne s'arrête pas juste à identifier des modèles de bugs prédéfinis. PMD possède aussi un rapport plus simple et compréhensible. 
 
-<h3>Sources</h3>
-https://blog.codacy.com/which-java-static-code-analysis-tools-should-i-use/
-https://spotbugs.readthedocs.io/en/latest/gradle.html
 
 <h2>Intégration au projet</h2>
 
@@ -93,4 +80,18 @@ Il est possible aussi de classifier une classe qui n'a pas besoin d'être analys
 
 <h3>Gagnant: PMD</h3>
 
-Bien que SpotBugs propose des options d'analyses intéressantes, PMD permet de personnaliser ce qui est analysé, ce qui est reporté mais aussi de faire en sorte que la qualité du code est améliorée.  
+Bien que SpotBugs propose des options d'analyses intéressantes, PMD permet de personnaliser ce qui est analysé, ce qui est reporté mais aussi de faire en sorte que la qualité du code est améliorée. 
+
+
+
+<h3>Sources</h3>
+https://pmd.github.io/latest/#overview
+https://pmd.github.io/
+https://www.datarespons.com/code-quality-assurance-with-pmd/
+https://spotbugs.github.io/index.html#using-spotbugs
+http://findbugs.sourceforge.net/ 
+https://blog.codacy.com/which-java-static-code-analysis-tools-should-i-use/
+https://spotbugs.readthedocs.io/en/latest/gradle.html
+
+
+
