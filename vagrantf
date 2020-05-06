@@ -14,6 +14,14 @@ Vagrant.configure("2") do |config|
     sudo unzip -q /opt/gradle-6.4-bin.zip -d /opt
     echo 'export GRADLE_HOME=/opt/gradle-6.4' >> .bashrc
     echo 'PATH=$PATH:$GRADLE_HOME/bin' >> .bashrc
+
+
+    ## Installation de Jenkins
+    wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+    sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list/'
+    sudo apt-get update
+    sudo apt-get install jenkins
+
   SHELL
 
 end
