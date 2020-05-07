@@ -86,13 +86,14 @@ Bien que SpotBugs propose des options d'analyses intéressantes, PMD permet de p
 
 
 <h3>Sources</h3>
-* *https://pmd.github.io/latest/#overview
-* https://pmd.github.io/
-* https://www.datarespons.com/code-quality-assurance-with-pmd/
-* https://spotbugs.github.io/index.html#using-spotbugs
-* http://findbugs.sourceforge.net/ 
-* https://blog.codacy.com/which-java-static-code-analysis-tools-should-i-use/
-* https://spotbugs.readthedocs.io/en/latest/gradle.html
+
+*https://pmd.github.io/latest/#overview \
+https://pmd.github.io/ \
+https://www.datarespons.com/code-quality-assurance-with-pmd/ \
+https://spotbugs.github.io/index.html#using-spotbugs \
+http://findbugs.sourceforge.net/ \
+https://blog.codacy.com/which-java-static-code-analysis-tools-should-i-use/ \
+https://spotbugs.readthedocs.io/en/latest/gradle.html \
 
 
 
