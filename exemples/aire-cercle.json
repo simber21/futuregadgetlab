@@ -1,8 +1,0 @@
-["begin",
-
-  ["define", "pi", 3.141592],
-
-  ["define", "aire-cercle", ["lambda", ["r"],
-    ["*", "pi", "r", "r"]]],
-  
-  ["aire-cercle", 10.0]]

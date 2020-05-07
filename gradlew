@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #!/usr/bin/env sh
 
 #
@@ -16,9 +15,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-=======
-#!/usr/bin/env bash
->>>>>>> bd9bb71dab58340e9c8430a0f7318ae3d681dec8
 
 ##############################################################################
 ##
@@ -26,7 +22,6 @@
 ##
 ##############################################################################
 
-<<<<<<< HEAD
 # Attempt to set APP_HOME
 # Resolve links: $0 may be a link
 PRG="$0"
@@ -44,15 +39,10 @@ SAVED="`pwd`"
 cd "`dirname \"$PRG\"`/" >/dev/null
 APP_HOME="`pwd -P`"
 cd "$SAVED" >/dev/null
-=======
-# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
-DEFAULT_JVM_OPTS=""
->>>>>>> bd9bb71dab58340e9c8430a0f7318ae3d681dec8
 
 APP_NAME="Gradle"
 APP_BASE_NAME=`basename "$0"`
 
-<<<<<<< HEAD
 # Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'
 
@@ -64,16 +54,6 @@ warn () {
 }
 
 die () {
-=======
-# Use the maximum available, or set MAX_FD != -1 to use that value.
-MAX_FD="maximum"
-
-warn ( ) {
-    echo "$*"
-}
-
-die ( ) {
->>>>>>> bd9bb71dab58340e9c8430a0f7318ae3d681dec8
     echo
     echo "$*"
     echo
@@ -84,10 +64,7 @@ die ( ) {
 cygwin=false
 msys=false
 darwin=false
-<<<<<<< HEAD
 nonstop=false
-=======
->>>>>>> bd9bb71dab58340e9c8430a0f7318ae3d681dec8
 case "`uname`" in
   CYGWIN* )
     cygwin=true
@@ -98,34 +75,11 @@ case "`uname`" in
   MINGW* )
     msys=true
     ;;
-<<<<<<< HEAD
   NONSTOP* )
     nonstop=true
     ;;
 esac
 
-=======
-esac
-
-# Attempt to set APP_HOME
-# Resolve links: $0 may be a link
-PRG="$0"
-# Need this for relative symlinks.
-while [ -h "$PRG" ] ; do
-    ls=`ls -ld "$PRG"`
-    link=`expr "$ls" : '.*-> \(.*\)$'`
-    if expr "$link" : '/.*' > /dev/null; then
-        PRG="$link"
-    else
-        PRG=`dirname "$PRG"`"/$link"
-    fi
-done
-SAVED="`pwd`"
-cd "`dirname \"$PRG\"`/" >/dev/null
-APP_HOME="`pwd -P`"
-cd "$SAVED" >/dev/null
-
->>>>>>> bd9bb71dab58340e9c8430a0f7318ae3d681dec8
 CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
 
 # Determine the Java command to use to start the JVM.
@@ -151,11 +105,7 @@ location of your Java installation."
 fi
 
 # Increase the maximum file descriptors if we can.
-<<<<<<< HEAD
 if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$nonstop" = "false" ] ; then
-=======
-if [ "$cygwin" = "false" -a "$darwin" = "false" ] ; then
->>>>>>> bd9bb71dab58340e9c8430a0f7318ae3d681dec8
     MAX_FD_LIMIT=`ulimit -H -n`
     if [ $? -eq 0 ] ; then
         if [ "$MAX_FD" = "maximum" -o "$MAX_FD" = "max" ] ; then
@@ -175,13 +125,8 @@ if $darwin; then
     GRADLE_OPTS="$GRADLE_OPTS \"-Xdock:name=$APP_NAME\" \"-Xdock:icon=$APP_HOME/media/gradle.icns\""
 fi
 
-<<<<<<< HEAD
 # For Cygwin or MSYS, switch paths to Windows format before running java
 if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then
-=======
-# For Cygwin, switch paths to Windows format before running java
-if $cygwin ; then
->>>>>>> bd9bb71dab58340e9c8430a0f7318ae3d681dec8
     APP_HOME=`cygpath --path --mixed "$APP_HOME"`
     CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
     JAVACMD=`cygpath --unix "$JAVACMD"`
@@ -209,7 +154,6 @@ if $cygwin ; then
         else
             eval `echo args$i`="\"$arg\""
         fi
-<<<<<<< HEAD
         i=`expr $i + 1`
     done
     case $i in
@@ -237,29 +181,3 @@ APP_ARGS=`save "$@"`
 eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS "\"-Dorg.gradle.appname=$APP_BASE_NAME\"" -classpath "\"$CLASSPATH\"" org.gradle.wrapper.GradleWrapperMain "$APP_ARGS"
 
 exec "$JAVACMD" "$@"
-=======
-        i=$((i+1))
-    done
-    case $i in
-        (0) set -- ;;
-        (1) set -- "$args0" ;;
-        (2) set -- "$args0" "$args1" ;;
-        (3) set -- "$args0" "$args1" "$args2" ;;
-        (4) set -- "$args0" "$args1" "$args2" "$args3" ;;
-        (5) set -- "$args0" "$args1" "$args2" "$args3" "$args4" ;;
-        (6) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" ;;
-        (7) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" ;;
-        (8) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" ;;
-        (9) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" "$args8" ;;
-    esac
-fi
-
-# Split up the JVM_OPTS And GRADLE_OPTS values into an array, following the shell quoting and substitution rules
-function splitJvmOpts() {
-    JVM_OPTS=("$@")
-}
-eval splitJvmOpts $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS
-JVM_OPTS[${#JVM_OPTS[*]}]="-Dorg.gradle.appname=$APP_BASE_NAME"
-
-exec "$JAVACMD" "${JVM_OPTS[@]}" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
->>>>>>> bd9bb71dab58340e9c8430a0f7318ae3d681dec8

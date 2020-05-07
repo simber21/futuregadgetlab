@@ -20,8 +20,37 @@ public class Evaluator {
     final var head = sexpr.get(0);
     final var tail = sexpr.subList(1, sexpr.size());
     
-    if (head.equals("if")) {
+    if (head.equals("list")) {
+      return tail.stream().map(a -> eval(a, env)).collect(toList());
+    }
+    else if (head.equals("if")) {
       var branch = ((boolean) eval(tail.get(0), env)) ? tail.get(1) : tail.get(2);
+      return eval(branch, env);
+    }
+    if (head.equals("and")) {
+      var branch = (
+        var res = true;
+        for (item : tail) {
+          if !((boolean) eval(item, env)) {
+            res = false;
+          }
+        }
+      );
+      return eval(branch, env);
+    }
+    if (head.equals("eq")) {
+      var branch = (
+        var res = true;
+        for (int i; i < tail.size - 1; i++) {
+          if ((double) tail.get(i) != (double) tail.get(i+1)) {
+            res = false;
+          }
+        }
+      );
+      return eval(branch, env);
+    }
+    if (head.equals("not")) {
+      var branch = (eval(tail.get(0), env) != eval(tail.get(1), env));
       return eval(branch, env);
     }
     else if (head.equals("define")) {

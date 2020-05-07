@@ -1,8 +1,6 @@
 
 <h1> Comparaisons entre Maven et Gradle </h1>
 
-<<<<<<< HEAD
-=======
 <h2> Introduction à Maven </h2>
 
 Apache Maven est un logiciel libre de gestion et automatisation de projets Java. Il a été crée et est présentement maintenu par l'organisme sans but lucratif Apache Software Foundation. En 2002, Maven a débuté comme sous-projet du défunt projet Jakarta Turbine pour ensuite être officiellement publié comme logiciel en 2004. En date de ce rapport (janvier 2020), la version 3.6.3 est la version courante.
@@ -18,7 +16,6 @@ https://maven.apache.org/what-is-maven.html \
 http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html 
 
 
->>>>>>> master
 <h2> Introduction à Gradle </h2>
 
 Gradle est un logiciel libre sous la license Apache 2.0 qui permet l'automatisation de build de projets Java. Cet outil à été introduit au public en 2007 et en est maintenant à la version 6.0 en date du 8 novembre 2019. 
@@ -100,10 +97,7 @@ La documentation de Gradle est plus moderne que Maven où chaque tutoriel est bi
 
 <h2>Références</h2>
 
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 https://gradle.org/maven-vs-gradle/ \
 https://gradle.org/gradle-vs-maven-performance/ \
 https://dzone.com/articles/gradle-vs-maven \
