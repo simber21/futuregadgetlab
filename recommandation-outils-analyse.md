@@ -3,13 +3,9 @@
 
 <h2>PMD</h2>
 
-PMD est un outil d'analyse statique du code source. Additionellement, il comprend un détecteur de code copier-coller (CPD) qui trouve les bouts de code dupliqués. Il trouve les erreurs communes de programmation comme les variables non utilisées, 
-    
-les catch blocks vides, des objets crées inutilement, ect.. En plus de supporter Java, il supporte aussi au moins 7 autres langages. PMD peut être intégré facilement dans un procédé de build en but Maven, an tâche Ant, en tâche Gradle ou en ligne de commande.  
+PMD est un outil d'analyse statique du code source. Additionellement, il comprend un détecteur de code copier-coller (CPD) qui trouve les bouts de code dupliqués. Il trouve les erreurs communes de programmation comme les variables non utilisées, les catch blocks vides, des objets crées inutilement, ect.. En plus de supporter Java, il supporte aussi au moins 7 autres langages. PMD peut être intégré facilement dans un procédé de build en but Maven, an tâche Ant, en tâche Gradle ou en ligne de commande.  
 
-L'utilisateur peut utiliser les options de vérification disponibles ou créer leurs propres règles, écrites en Java. L'abbréviation "PMD" n'est pas exactement définie, il serait même un rétro-acronyme. "Programming Mistake Detector" ou "Project Mess Detector"
-
-sont les définitions données les plus logique. L'outil est principalement connu sous le nom "PMD" avec le slogan "Don't shoot the messenger" intégré dans le logo.
+L'utilisateur peut utiliser les options de vérification disponibles ou créer leurs propres règles, écrites en Java. L'abbréviation "PMD" n'est pas exactement définie, il serait même un rétro-acronyme. "Programming Mistake Detector" ou "Project Mess Detector" sont les définitions données les plus logique. L'outil est principalement connu sous le nom "PMD" avec le slogan "Don't shoot the messenger" intégré dans le logo.
 
 
 <h2>SpotBugs</h2>
@@ -90,13 +86,13 @@ Bien que SpotBugs propose des options d'analyses intéressantes, PMD permet de p
 
 
 <h3>Sources</h3>
-https://pmd.github.io/latest/#overview
-https://pmd.github.io/
-https://www.datarespons.com/code-quality-assurance-with-pmd/
-https://spotbugs.github.io/index.html#using-spotbugs
-http://findbugs.sourceforge.net/ 
-https://blog.codacy.com/which-java-static-code-analysis-tools-should-i-use/
-https://spotbugs.readthedocs.io/en/latest/gradle.html
+* *https://pmd.github.io/latest/#overview
+* https://pmd.github.io/
+* https://www.datarespons.com/code-quality-assurance-with-pmd/
+* https://spotbugs.github.io/index.html#using-spotbugs
+* http://findbugs.sourceforge.net/ 
+* https://blog.codacy.com/which-java-static-code-analysis-tools-should-i-use/
+* https://spotbugs.readthedocs.io/en/latest/gradle.html
 
 
 
