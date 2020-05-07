@@ -13,6 +13,9 @@ plugins {
     id 'application'
     // plugin ShadowJar pour créer un jar exécutable avec toutes les dépendences.
     id 'com.github.johnrengelman.shadow' version '5.2.0'
+    // Plugin pour l'outil d'analyse PMD
+    id 'pmd'
+
 }
 
 version = '1.0'
@@ -42,3 +45,9 @@ application {
     mainClassName = 'minischeme.Application'
 }
 
+pmd {
+    version = '6.22.0'
+    //ruleSetFiles = files("config/pmd/ruleset.xml")
+    ruleSetConfig = resources.text.fromFile("config/pmd/ruleset.xml")
+    ignoreFailures = true
+}

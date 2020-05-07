@@ -6,5 +6,5 @@ bin
 __MACOS
 *.swp
 .DS_Store
-.gradle
-
+dest
+*gradle*
