@@ -31,7 +31,7 @@ public class Evaluator {
       var branch = (
         var res = true;
         for (item : tail) {
-          if !((boolean) eval(item, env)) {
+          if (!((boolean) eval(item, env))) {
             res = false;
           }
         }
