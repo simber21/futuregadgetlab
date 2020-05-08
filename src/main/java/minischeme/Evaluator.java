@@ -28,15 +28,9 @@ public class Evaluator {
       return eval(branch, env);
     }
     if (head.equals("and")) {
-<<<<<<< HEAD
-      var branch = (
-        var res = true;
-        for (item : tail) {
-=======
       boolean res = true;
       var branch = new Object();
         for (Object item : tail) {
->>>>>>> 4e7f170734a1f50e5eaf3d7b9a15fc2d0ff31bac
           if (!((boolean) eval(item, env))) {
             res = false;
           }
