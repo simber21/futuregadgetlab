@@ -7,10 +7,10 @@ import java.util.Map;
 
 public class Lambda implements Procedure {
 
-  private final List<String> params;
-  private final List<Object> body;
-  private final Evaluator evaluator;
-  private final Map<String, Object> env;
+  private transient final List<String> params;
+  private transient final List<Object> body;
+  private transient final Evaluator evaluator;
+  private transient final Map<String, Object> env;
 
   public Lambda(List<String> params, List<Object> body, Evaluator evaluator, Map<String, Object> env) {
     this.params = params;
