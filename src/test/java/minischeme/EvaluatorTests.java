@@ -136,11 +136,14 @@ class EvaluatorTests {
     assertEquals(120.0, result);
   }
 
-
+  /*
+  Teste pour voir si la réponse de l'opérateur AND dépend du positionnement de
+  la valeur booléenne.
+ */
   @Test void andTest() {
-  //List<Object> program = List.of("and", true, true, true, fasle );
   assertFalse((boolean) evaluator.eval(List.of("and", true, false), env));
   assertTrue((boolean) evaluator.eval(List.of("and", true, true, true, true), env));
+  assertFalse((boolean) evaluator.eval(List.of("and", false, true), env));
 
   }
 
