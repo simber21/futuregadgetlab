@@ -1,4 +1,4 @@
-package minischemeParserTest.parser;
+package minischeme.parser;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,4 +1,4 @@
-package minischemeParser.parser;
+package minischeme.parser;
 
 import static java.util.stream.Collectors.*;
 

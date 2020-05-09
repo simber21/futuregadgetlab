@@ -1,4 +1,4 @@
-package minischeme-parser.src.main.java.minischemeParser.parser.api;
+package minischeme.parser.api;
 
 import java.util.List;
 
