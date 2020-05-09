@@ -27,11 +27,17 @@ public class Evaluator {
       var branch = ((boolean) eval(tail.get(0), env)) ? tail.get(1) : tail.get(2);
       return eval(branch, env);
     }
-
+    /*
+    L'opérateur AND prend en paramètre une liste d'expression booléene.
+    Les deux conditions incluent dans la boucle for permet de retourner FALSE lorsque
+    la dernière epression dans la liste est TRUE.
+    */
     if (head.equals("and")) {
       boolean result = true;
-      for ( int j = 1; j < sexpr.size(); j++ ) {
+      for ( int j = 1; result && j < sexpr.size() ; j++ ) {
+
         result = (boolean) sexpr.get(j);
+
       }
       return result;
     }
