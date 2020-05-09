@@ -27,6 +27,7 @@ class EvaluatorTests {
     assertEquals(24.0, result);
   }
 
+
   @Test void variableDefinitionTest() {
     List<Object> program = List.of("define", "pi", 3.141592);
     Object result = evaluator.eval(program, env);
@@ -98,6 +99,11 @@ class EvaluatorTests {
     assertEquals(2.0, evaluator.eval(List.of("-", 5.0, 2.0, 1.0), env));
   }
 
+  @Test void additionTest() {
+    assertEquals(5.0, evaluator.eval(List.of("+", 3.0, 2.0), env));
+    assertEquals(5.0, evaluator.eval(List.of("+", 0.0, 1.0, 1.0, 3.0), env));
+  }
+
   @Test void ifTest() {
     List<Object> program = List.of("if", List.of("<", 1.0, 2.0), List.of("*", 2.0, 2.0), List.of("*", 3.0, 3.0));
     Object result = evaluator.eval(program, env);
@@ -129,5 +135,6 @@ class EvaluatorTests {
     Object result = evaluator.eval(program, env);
     assertEquals(120.0, result);
   }
+
 
 }
