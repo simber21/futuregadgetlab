@@ -32,12 +32,6 @@ public class Evaluator {
       boolean result = true;
       for ( int j = 1; j < sexpr.size(); j++ ) {
         result = (boolean) sexpr.get(j);
-
-        /*
-        if (!(boolean) sexpr.get(j)) {
-          result = false;
-        }
-        */
       }
       return result;
     }
