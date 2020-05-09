@@ -27,20 +27,21 @@ public class Evaluator {
       var branch = ((boolean) eval(tail.get(0), env)) ? tail.get(1) : tail.get(2);
       return eval(branch, env);
     }
-    if (head.equals("and")) {
-      boolean res = true;
-      var branch = new Object();
-        for (Object item : tail) {
-          if (!((boolean) eval(item, env))) {
-            res = false;
-          }
-          if(res) {
-             branch = item;
-          }
-        }
 
-      return eval(branch, env);
+    if (head.equals("and")) {
+      boolean result = true;
+      for ( int j = 1; j < sexpr.size(); j++ ) {
+        result = (boolean) sexpr.get(j);
+
+        /*
+        if (!(boolean) sexpr.get(j)) {
+          result = false;
+        }
+        */
+      }
+      return result;
     }
+
     if (head.equals("eq")) {
       boolean res = true;
       Object branch = new Object();
