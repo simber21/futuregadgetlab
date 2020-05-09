@@ -136,6 +136,14 @@ class EvaluatorTests {
     assertEquals(120.0, result);
   }
 
+
+  @Test void andTest() {
+  //List<Object> program = List.of("and", true, true, true, fasle );
+  assertFalse((boolean) evaluator.eval(List.of("and", true, false), env));
+  assertTrue((boolean) evaluator.eval(List.of("and", true, true, true, true), env));
+
+  }
+
   @Test void notTest() {
     /*
     List<Object> program = List.of("not", 3.0, 2.0);
