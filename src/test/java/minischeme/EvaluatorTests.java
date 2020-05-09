@@ -136,5 +136,14 @@ class EvaluatorTests {
     assertEquals(120.0, result);
   }
 
+  @Test void notTest() {
+    /*
+    List<Object> program = List.of("not", 3.0, 2.0);
+    Object result = evaluator.eval(program, env);
+    */
+    assertTrue((boolean) evaluator.eval(List.of("not", 2.0, 3.0), env));
+
+
+  }
 
 }
