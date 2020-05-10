@@ -17,30 +17,47 @@ plugins {
     id 'pmd'
     // Pour compiler le projet en format WAR
     id 'war'
+    //plugin pour parser
+    id 'antlr'
+    id 'maven-publish'
 
 }
 
 version = '1.0'
 
-// In this section you declare where to find the dependencies of your project
 repositories {
-    // Use 'jcenter' for resolving your dependencies.
-    // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    mavenCentral()
+}
+
+test {
+    //à décommenter une fois que les tests sont intégrés
+    //useJUnitPlatform()
 }
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
     // Dépendences pour l'application
     implementation 'org.slf4j:slf4j-api:1.7.13'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.3'
     // Dépendences pour les tests
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.1'
+    antlr 'org.antlr:antlr4:4.7'
+}
+
+task junitConsole(type: JavaExec) {
+    dependsOn testClasses
+    classpath sourceSets.test.runtimeClasspath
+    main 'org.junit.platform.console.ConsoleLauncher'
+    args '--scan-classpath'
 }
 
 //Spécifier la version Java que nous devons utiliser (11)
-sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
+sourceCompatibility = '1.11'
+targetCompatibility = '1.11'
+
+generateGrammarSource {
+    arguments += ['-visitor', '-no-listener']
+}
 
 //Spécifier le nom de la classe avec la méthode "main" dans le fichier MANIFEST.MF du fichier Jar.
 application {
@@ -52,4 +69,16 @@ pmd {
     //ruleSetFiles = files("config/pmd/ruleset.xml")
     ruleSetConfig = resources.text.fromFile("config/pmd/ruleset.xml")
     ignoreFailures = true
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'ca.uqam.inf2050.minischeme'
+            artifactId = 'parser'
+            version = '1.1'
+
+            from components.java
+        }
+    }
 }
