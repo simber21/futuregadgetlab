@@ -25,8 +25,11 @@ plugins {
 
 version = '1.0'
 
+subprojects {
+    version = '1.0'
+}
+
 repositories {
-    jcenter()
     mavenCentral()
 }
 
@@ -42,6 +45,8 @@ dependencies {
     // Dépendences pour les tests
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.1'
     antlr 'org.antlr:antlr4:4.7'
+    //dépendance au projet
+    compile project(':minischeme-web')
 }
 
 task junitConsole(type: JavaExec) {

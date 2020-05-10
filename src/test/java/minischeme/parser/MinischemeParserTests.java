@@ -17,15 +17,16 @@ class MinischemeParserTests {
   @Test
   @DisplayName("Parses lists of atoms")
   void listOfAtoms() throws Exception {
-    var source = "(+ 1.0 2.0 3.0)";
+    var source = "(+ 1.0 2.0 3.0 4.0)";
 
     var parsed = (List<Object>) Parser.parseString(source);
 
-    assertEquals(4, parsed.size());
+    assertEquals(5, parsed.size());
     assertEquals("+", (String) parsed.get(0));
     assertEquals(1.0d, (double) parsed.get(1));
     assertEquals(2.0d, (double) parsed.get(2));
     assertEquals(3.0d, (double) parsed.get(3));
+    assertEquals(4.0d, (double) parsed.get(4));
   }
 
   @Test
