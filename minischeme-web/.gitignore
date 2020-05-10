@@ -1,4 +1,11 @@
-.gradle
-.mvn
+# répertoires de compilation
 build
 target
+bin
+.idea
+__MACOS
+*.swp
+.DS_Store
+dest
+.gradle
+.mvn
