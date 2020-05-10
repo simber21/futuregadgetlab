@@ -20,7 +20,7 @@ plugins {
     id 'java'
     id 'application'
     // plugin ShadowJar pour créer un jar exécutable avec toutes les dépendences.
-    id 'com.github.johnrengelman.shadow' version '5.2.0'
+    //id 'com.github.johnrengelman.shadow' version '5.2.0'
     // Plugin pour l'outil d'analyse PMD
     id 'pmd'
     // Pour compiler le projet en format WAR
@@ -43,6 +43,7 @@ apply plugin: 'io.spring.dependency-management'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 test {
@@ -60,11 +61,8 @@ dependencies {
     testRuntimeOnly('org.junit.platform:junit-platform-console:1.3.2')
     //Dépendences pour parser
     antlr 'org.antlr:antlr4:4.7'
-    //dépendance au projet
+    //dépendance pour sous-projet
     compile project(':minischeme-web')
-    //à enlever une fois le parser intégré
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.3'
-
 }
 
 task junitConsole(type: JavaExec) {
@@ -73,6 +71,7 @@ task junitConsole(type: JavaExec) {
     main 'org.junit.platform.console.ConsoleLauncher'
     args '--scan-classpath'
 }
+
 
 //Spécifier la version Java que nous devons utiliser (11)
 sourceCompatibility = '1.11'
@@ -85,6 +84,13 @@ generateGrammarSource {
 //Spécifier le nom de la classe avec la méthode "main" dans le fichier MANIFEST.MF du fichier Jar.
 application {
     mainClassName = 'minischeme.Application'
+}
+
+//Pour mettre le nom de la classe avec methode main dans le fichier MANIFEST.MF du jar créer par default
+jar {
+    manifest {
+        attributes 'Main-Class': 'minischeme.Application'
+    }
 }
 
 pmd {
