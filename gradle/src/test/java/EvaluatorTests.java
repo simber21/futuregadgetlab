@@ -13,8 +13,8 @@ import static java.util.stream.Collectors.joining;
 
 class EvaluatorTests {
 
-  private transient Evaluator evaluator;
-  private transient Map<String, Object> env;
+  private Evaluator evaluator;
+  private Map<String, Object> env;
 
   @BeforeEach void init() {
     this.evaluator = new Evaluator();
@@ -26,7 +26,6 @@ class EvaluatorTests {
     Object result = evaluator.eval(program, env);
     assertEquals(24.0, result);
   }
-
 
   @Test void variableDefinitionTest() {
     List<Object> program = List.of("define", "pi", 3.141592);
@@ -99,11 +98,6 @@ class EvaluatorTests {
     assertEquals(2.0, evaluator.eval(List.of("-", 5.0, 2.0, 1.0), env));
   }
 
-  @Test void additionTest() {
-    assertEquals(5.0, evaluator.eval(List.of("+", 3.0, 2.0), env));
-    assertEquals(5.0, evaluator.eval(List.of("+", 0.0, 1.0, 1.0, 3.0), env));
-  }
-
   @Test void ifTest() {
     List<Object> program = List.of("if", List.of("<", 1.0, 2.0), List.of("*", 2.0, 2.0), List.of("*", 3.0, 3.0));
     Object result = evaluator.eval(program, env);
@@ -134,58 +128,6 @@ class EvaluatorTests {
         List.of("facto", 5.0));
     Object result = evaluator.eval(program, env);
     assertEquals(120.0, result);
-  }
-
-  /*
-  Teste pour voir si la réponse de l'opérateur AND dépend du positionnement de
-  la valeur booléenne.
-  Une grande liste a aussi été utilisé pour verifier la boucle for dans le
-  fichier GlobalEnvironment.java
- */
-  @Test void andTest() {
-  assertFalse((boolean) evaluator.eval(List.of("and", true, false), env));
-  assertTrue((boolean) evaluator.eval(List.of("and", true, true, true, true), env));
-  assertFalse((boolean) evaluator.eval(List.of("and", false, true), env));
-  assertFalse((boolean) evaluator.eval(List.of("and", true, true, false, true), env));
-  }
-
-  @Test void notTest() {
-  assertTrue((boolean) evaluator.eval(List.of("not", false), env));
-  assertFalse((boolean) evaluator.eval(List.of("not", true), env));
-  }
-
-  @Test void eqTest() {
-  assertTrue((boolean) evaluator.eval( List.of("eq", 2.0, 2.0), env));
-  assertFalse((boolean) evaluator.eval(List.of("eq", 2.0, 22.0), env));
-  assertTrue((boolean) evaluator.eval( List.of("eq", 2.0, 2.0, 2.0, 2.0, 2.0), env));
-  }
-
-  @Test void countTest(){
-    List<Object> program = List.of("count", 1.0, 2.0, 3.0, 4.0);
-    Object result = evaluator.eval(program, env);
-    assertEquals(4.0, result);
-  }
-
-  @Test void headTest(){
-    List<Object> program = List.of("head", 2.0, 3.0, 15.0, 20.0);
-    Object first = evaluator.eval(program, env);
-    assertEquals(2.0, first);
-  }
-
-  @Test void tailTest(){
-    List<Object> program = List.of("tail", 2.0, 3.0, 15.0, 20.0);
-    Object last = evaluator.eval(program, env);
-    assertEquals(List.of(3.0, 15.0, 20.0), last );
-  }
-
-  @Test void oneValueTest(){
-    /*
-    Si une seule valeur, un message d'avertissement apparaît
-    l'utilisateur devrait utiliser la fonction HEAD
-     */
-    List<Object> program = List.of("tail", 2.0);
-    Object last = evaluator.eval(program, env);
-    assertEquals(List.of("Une seule valeur, utiliser HEAD"), last );
   }
 
 }

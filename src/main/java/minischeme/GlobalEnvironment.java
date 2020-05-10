@@ -55,6 +55,30 @@ public class GlobalEnvironment {
       return xs.stream().filter(x -> (boolean) fn.call(List.of(x))).collect(toList());
     });
 
+    env.put("and", (Procedure) (List<Object> params) -> {
+      var result = true;
+      for (int i = 0; i < params.size(); i++) result = result && (boolean) params.get(i);
+      return result;
+    });
+    /*
+    Retourne true si false et false si true.
+    L'opérateur ne prend qu'un seul paramètre.
+     */
+    env.put("not", (Procedure) (List<Object> params) -> {
+      return !((boolean) params.get(0));
+    });
+
+    /*
+    Retourne false si un seul élément n'est pas égale.
+    La fonction equals de la classe Double est utilisé pour comparer les objets.
+    */
+    env.put("eq", (Procedure) (List<Object> params) -> {
+      var result = true;
+      for (int i = 0; i < params.size()-1; i++) result = result && ((Double) params.get(i)).equals((Double) params.get(i+1));
+      return result;
+    });
+
+
     return env;
   }
 }
