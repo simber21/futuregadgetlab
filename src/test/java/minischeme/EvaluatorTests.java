@@ -148,13 +148,12 @@ class EvaluatorTests {
   }
 
   @Test void notTest() {
-    /*
-    List<Object> program = List.of("not", 3.0, 2.0);
-    Object result = evaluator.eval(program, env);
-    */
-    assertTrue((boolean) evaluator.eval(List.of("not", 2.0, 3.0), env));
-
-
+   assertTrue((boolean) evaluator.eval(List.of("not", 2.0, 3.0), env));
   }
 
+  @Test void countTest(){
+    List<Object> program = List.of("count", 1.0, 2.0, 3.0, 4.0);
+    Object result = evaluator.eval(program, env);
+    assertEquals(4.0, result);
+  }
 }
