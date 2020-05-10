@@ -1,10 +1,14 @@
 package minischeme.parser;
 
+import minischeme.parser.api.Parser;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.*;
-import minischeme.parser.api.*;
-import org.junit.jupiter.api.*;
+
 
 
 @SuppressWarnings("unchecked")

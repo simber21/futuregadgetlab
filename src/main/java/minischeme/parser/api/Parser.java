@@ -1,11 +1,13 @@
 package minischeme.parser.api;
 
-import java.util.List;
 
-import minischeme.parser.*;
-
-import org.antlr.v4.runtime.CommonTokenStream;
+import minischeme.parser.MinischemeDefaultVisitor;
+import minischeme.parser.MinischemeLexer;
+import minischeme.parser.MinischemeParser;
 import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
+
+import java.util.List;
 
 public class Parser {
 

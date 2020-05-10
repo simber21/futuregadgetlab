@@ -1,8 +1,8 @@
 package minischeme.parser;
 
-import static java.util.stream.Collectors.*;
+import java.util.List;
 
-import java.util.*;
+import static java.util.stream.Collectors.toList;
 
 public class MinischemeDefaultVisitor extends MinischemeBaseVisitor<Object> {
 
