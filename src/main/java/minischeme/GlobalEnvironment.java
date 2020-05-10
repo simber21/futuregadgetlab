@@ -54,6 +54,16 @@ public class GlobalEnvironment {
       var xs = (List<Object>) params.get(1);
       return xs.stream().filter(x -> (boolean) fn.call(List.of(x))).collect(toList());
     });
+    /*
+    Retourne false si un seul élément n'est pas égale.
+    La fonction equals de la classe Double est utilisé pour comparer les objets.
+    */
+    env.put("eq", (Procedure) (List<Object> params) -> {
+      var result = true;
+      for (int i = 0; i < params.size()-1; i++) result = result && ((Double) params.get(i)).equals((Double) params.get(i+1));
+      return result;
+    });
+
 
     return env;
   }

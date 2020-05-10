@@ -42,24 +42,10 @@ public class Evaluator {
       }
       return result;
     }
-    else if (head.equals("eq")) {
-      boolean res = true;
-      Object branch = new Object();
-        for (int i = 0; i < tail.size() - 1; i++) {
-          if ((double) tail.get(i) != (double) tail.get(i+1)) {
-            res = false;
-          }
-          if(res) {
-            branch = tail.get(i);
-          }
-        }
-
-      return eval(branch, env);
-    }
     else if (head.equals("count")) {
       /*
-      La fonction COUNT retourne un Double, car les variables
-      des tests (et du GlobalEnvironment) sont des Double.
+      La fonction COUNT retourne un double, car les variables
+      des tests (et du GlobalEnvironment) sont des double.
       */
       double counter = 0.0;
       for( int k=1; k < sexpr.size(); k++) {
@@ -68,6 +54,10 @@ public class Evaluator {
       return counter;
     }
     else if (head.equals("head")) {
+      /*
+      Puisque la variable tail retourne déjà une liste sans l'opérateur,
+      la valeur à l'indice 0 sera toujours le premier élément de la liste.
+       */
        return tail.get(0);
     }
     else if (head.equals("tail")) {

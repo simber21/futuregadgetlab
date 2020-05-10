@@ -148,7 +148,13 @@ class EvaluatorTests {
   }
 
   @Test void notTest() {
-   assertTrue((boolean) evaluator.eval(List.of("not", 2.0, 3.0), env));
+  assertTrue((boolean) evaluator.eval(List.of("not", 2.0, 3.0), env));
+  }
+
+  @Test void eqTest() {
+  assertTrue((boolean) evaluator.eval( List.of("eq", 2.0, 2.0), env));
+  assertFalse((boolean) evaluator.eval(List.of("eq", 2.0, 22.0), env));
+  assertTrue((boolean) evaluator.eval( List.of("eq", 2.0, 2.0, 2.0, 2.0, 2.0), env));
   }
 
   @Test void countTest(){
