@@ -156,4 +156,27 @@ class EvaluatorTests {
     Object result = evaluator.eval(program, env);
     assertEquals(4.0, result);
   }
+
+  @Test void headTest(){
+    List<Object> program = List.of("head", 2.0, 3.0, 15.0, 20.0);
+    Object first = evaluator.eval(program, env);
+    assertEquals(2.0, first);
+  }
+
+  @Test void tailTest(){
+    List<Object> program = List.of("tail", 2.0, 3.0, 15.0, 20.0);
+    Object last = evaluator.eval(program, env);
+    assertEquals(List.of(3.0, 15.0, 20.0), last );
+  }
+
+  @Test void oneValueTest(){
+    /*
+    Si une seule valeur, un message d'avertissement apparaît
+    l'utilisateur devrait utiliser la fonction HEAD
+     */
+    List<Object> program = List.of("tail", 2.0);
+    Object last = evaluator.eval(program, env);
+    assertEquals(List.of("Une seule valeur, utiliser HEAD"), last );
+  }
+
 }

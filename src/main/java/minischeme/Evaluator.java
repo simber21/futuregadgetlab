@@ -19,6 +19,7 @@ public class Evaluator {
     final var sexpr = (List<Object>) expr;
     final var head = sexpr.get(0);
     final var tail = sexpr.subList(1, sexpr.size());
+
     
     if (head.equals("list")) {
       return tail.stream().map(a -> eval(a, env)).collect(toList());
@@ -65,6 +66,21 @@ public class Evaluator {
         counter = counter + 1;
       }
       return counter;
+    }
+    else if (head.equals("head")) {
+       return tail.get(0);
+    }
+    else if (head.equals("tail")) {
+      /*
+      Puisque la fonction TAIL ne retourne que les derniers éléments d'une liste
+      sans le premier élément (qu'on obtient avec la fonction HEAD).
+      */
+      List <Object> branch = List.of("Une seule valeur, utiliser HEAD");
+
+      if (sexpr.size() > 2) {
+         branch = sexpr.subList(2, sexpr.size());
+      }
+      return branch;
     }
     else if (head.equals("not")) {
       var branch = (eval(tail.get(0), env) != eval(tail.get(1), env));
