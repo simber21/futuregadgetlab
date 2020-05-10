@@ -15,7 +15,7 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '5.2.0'
     // Plugin pour l'outil d'analyse PMD
     id 'pmd'
-
+    id 'jacoco'
 }
 
 version = '1.0'
@@ -29,6 +29,7 @@ repositories {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport, pmdMain, pmdTest
 }
 
 // In this section you declare the dependencies for your production and test code
@@ -57,4 +58,12 @@ pmd {
     //ruleSetFiles = files("config/pmd/ruleset.xml")
     ruleSetConfig = resources.text.fromFile("config/pmd/ruleset.xml")
     ignoreFailures = true
+}
+
+jacoco {
+    reportsDir = file("$buildDir/jacocoReport")
+}
+
+jacocoTestReport {
+    dependsOn test
 }
