@@ -28,19 +28,12 @@ public class Evaluator {
       var branch = ((boolean) eval(tail.get(0), env)) ? tail.get(1) : tail.get(2);
       return eval(branch, env);
     }
-    else if (head.equals("and")) {
-    /*
-    L'opérateur AND prend en paramètre une liste d'expression booléene.
-    Les deux conditions incluent dans la boucle for permet de retourner FALSE lorsque
-    la dernière epression dans la liste est TRUE.
-    */
-      boolean result = true;
-      for ( int j = 1; result && j < sexpr.size() ; j++ ) {
-
-        result = (boolean) sexpr.get(j);
-
-      }
-      return result;
+    else if (head.equals("define")) {
+      env.put((String) tail.get(0), eval(tail.get(1), env));
+      return null;
+    }
+    else if (head.equals("lambda")) {
+      return new Lambda((List<String>) tail.get(0), (List<Object>) tail.get(1), this, env);
     }
     else if (head.equals("count")) {
       /*
@@ -62,8 +55,9 @@ public class Evaluator {
     }
     else if (head.equals("tail")) {
       /*
-      Puisque la fonction TAIL ne retourne que les derniers éléments d'une liste
-      sans le premier élément (qu'on obtient avec la fonction HEAD).
+      Retourne que les derniers éléments d'une liste
+      Le premier élément est obtenu avec HEAD alors un messge à l'utilisateur
+      si il n'y a qu'une seule valeur dans la liste en paramètre.
       */
       List <Object> branch = List.of("Une seule valeur, utiliser HEAD");
 
@@ -71,17 +65,6 @@ public class Evaluator {
          branch = sexpr.subList(2, sexpr.size());
       }
       return branch;
-    }
-    else if (head.equals("not")) {
-      var branch = (eval(tail.get(0), env) != eval(tail.get(1), env));
-      return eval(branch, env);
-    }
-    else if (head.equals("define")) {
-      env.put((String) tail.get(0), eval(tail.get(1), env));
-      return null;
-    }
-    else if (head.equals("lambda")) {
-      return new Lambda((List<String>) tail.get(0), (List<Object>) tail.get(1), this, env);
     }
     else {
       final var proc = (Procedure) eval(head, env);

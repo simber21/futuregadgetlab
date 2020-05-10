@@ -139,16 +139,19 @@ class EvaluatorTests {
   /*
   Teste pour voir si la réponse de l'opérateur AND dépend du positionnement de
   la valeur booléenne.
+  Une grande liste a aussi été utilisé pour verifier la boucle for dans le
+  fichier GlobalEnvironment.java
  */
   @Test void andTest() {
   assertFalse((boolean) evaluator.eval(List.of("and", true, false), env));
   assertTrue((boolean) evaluator.eval(List.of("and", true, true, true, true), env));
   assertFalse((boolean) evaluator.eval(List.of("and", false, true), env));
-
+  assertFalse((boolean) evaluator.eval(List.of("and", true, true, false, true), env));
   }
 
   @Test void notTest() {
-  assertTrue((boolean) evaluator.eval(List.of("not", 2.0, 3.0), env));
+  assertTrue((boolean) evaluator.eval(List.of("not", false), env));
+  assertFalse((boolean) evaluator.eval(List.of("not", true), env));
   }
 
   @Test void eqTest() {
