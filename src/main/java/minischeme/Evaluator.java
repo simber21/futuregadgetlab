@@ -28,25 +28,21 @@ public class Evaluator {
       return eval(branch, env);
     }
     if (head.equals("and")) {
-      var branch = (
-        var res = true;
-        for (item : tail) {
-          if !((boolean) eval(item, env)) {
-            res = false;
-          }
+      var branch = true;
+      for (Object item : tail) {
+        if (!(boolean) eval(item, env)) {
+          branch = false;
         }
-      );
+      }
       return eval(branch, env);
     }
     if (head.equals("eq")) {
-      var branch = (
-        var res = true;
-        for (int i; i < tail.size - 1; i++) {
-          if ((double) tail.get(i) != (double) tail.get(i+1)) {
-            res = false;
-          }
+      var branch = true;
+      for (int i = 0; i < tail.size() - 1; i++) {
+        if ((double) tail.get(i) != (double) tail.get(i+1)) {
+          branch = false;
         }
-      );
+      }
       return eval(branch, env);
     }
     if (head.equals("not")) {

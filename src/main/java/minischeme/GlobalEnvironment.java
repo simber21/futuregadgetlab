@@ -49,6 +49,18 @@ public class GlobalEnvironment {
       return concat;
     });
 
+    env.put("count", (Procedure) (List<Object> params) -> {
+      return params.size();
+    });
+
+    env.put("head", (Procedure) (List<Object> params) -> {
+      return params.get(0);
+    });
+
+    env.put("tail", (Procedure) (List<Object> params) -> {
+      return params.get(params.size()-1);
+    });
+
     env.put("filter", (Procedure) (List<Object> params) -> {
       var fn = (Procedure) params.get(0);
       var xs = (List<Object>) params.get(1);
