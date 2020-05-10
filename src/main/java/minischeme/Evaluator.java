@@ -27,12 +27,12 @@ public class Evaluator {
       var branch = ((boolean) eval(tail.get(0), env)) ? tail.get(1) : tail.get(2);
       return eval(branch, env);
     }
+    else if (head.equals("and")) {
     /*
     L'opérateur AND prend en paramètre une liste d'expression booléene.
     Les deux conditions incluent dans la boucle for permet de retourner FALSE lorsque
     la dernière epression dans la liste est TRUE.
     */
-    if (head.equals("and")) {
       boolean result = true;
       for ( int j = 1; result && j < sexpr.size() ; j++ ) {
 
@@ -41,8 +41,7 @@ public class Evaluator {
       }
       return result;
     }
-
-    if (head.equals("eq")) {
+    else if (head.equals("eq")) {
       boolean res = true;
       Object branch = new Object();
         for (int i = 0; i < tail.size() - 1; i++) {
@@ -56,7 +55,18 @@ public class Evaluator {
 
       return eval(branch, env);
     }
-    if (head.equals("not")) {
+    else if (head.equals("count")) {
+      /*
+      La fonction COUNT retourne un Double, car les variables
+      des tests (et du GlobalEnvironment) sont des Double.
+      */
+      double counter = 0.0;
+      for( int k=1; k < sexpr.size(); k++) {
+        counter = counter + 1;
+      }
+      return counter;
+    }
+    else if (head.equals("not")) {
       var branch = (eval(tail.get(0), env) != eval(tail.get(1), env));
       return eval(branch, env);
     }
