@@ -76,4 +76,12 @@ class RunCommand implements Serializable {
   
   @NotNull
   private String result = "";
+
+  public @NotBlank @NotNull String getSource() {
+    return source;
+  }
+
+  public @NotNull String setResult(String result) {
+    return this.result = result;
+  }
 }

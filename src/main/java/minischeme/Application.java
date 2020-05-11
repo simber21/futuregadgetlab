@@ -12,4 +12,4 @@ public class Application {
     Object result = new Evaluator().eval(code, GlobalEnvironment.build());
     System.out.println(result.toString());
   }
-
+}
