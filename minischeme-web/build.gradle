@@ -22,7 +22,7 @@ dependencies {
   // web development
   compile("org.springframework.boot:spring-boot-starter-web")
   compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-
+  compile project(':minischeme-parser')
   // language extensions
   compileOnly("org.projectlombok:lombok:1.18.2")
   annotationProcessor("org.projectlombok:lombok:1.18.2")

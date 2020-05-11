@@ -1,11 +1,14 @@
 package minischeme.web.controller;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import minischeme.Evaluator;
+import minischeme.GlobalEnvironment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,6 +18,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import minischeme.parser.api.Parser;
 
 @Controller
 @RequestMapping("/")
@@ -47,9 +52,9 @@ public class EvaluatorController {
     try {
       final var source = command.getSource();
       log.info("CODE SOURCE RECU: <{}>", source);
-
-      final var result = "À FAIRE 🤔";
-      command.setResult(result);
+      List<Object> code = new Parser().parseString(source);
+      final var result = new Evaluator().eval(code, GlobalEnvironment.build());
+      command.setResult(result.toString());
 
       redirectAttributes
         .addFlashAttribute("flash_success", "run_evaluation_flash_success_message")
