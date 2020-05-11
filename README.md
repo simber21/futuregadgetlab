@@ -18,3 +18,13 @@ Example: /home/simberg/mon-repertoire-git/futuregadgetlab
 
 Si tout fonctionne, le terminal devrait afficher **314.1592**.
 
+* Installation VirtualBox
+  sudo apt install virtualbox
+
+* Installation Vagrant
+  sudo apt install vagrant
+  sudo apt upgrade vagrant
+  mkdir base/
+  mv Vagrantfile base/
+  cd base/
+  vagrant init
