@@ -126,4 +126,3 @@ jacoco {
 jacocoTestReport {
     dependsOn test
 }
-
