@@ -23,12 +23,16 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '5.2.0'
     // Plugin pour l'outil d'analyse PMD
     id 'pmd'
+<<<<<<< HEAD
     // Pour compiler le projet en format WAR
     id 'war'
     //plugin pour parser
     id 'antlr'
     id 'maven-publish'
 
+=======
+    id 'jacoco'
+>>>>>>> de0fee4273805cce9fa490e60359f73ecae4d19b
 }
 
 version = '1.0'
@@ -48,6 +52,10 @@ repositories {
 
 test {
     useJUnitPlatform()
+<<<<<<< HEAD
+=======
+    finalizedBy jacocoTestReport, pmdMain, pmdTest
+>>>>>>> de0fee4273805cce9fa490e60359f73ecae4d19b
 }
 
 // In this section you declare the dependencies for your production and test code
@@ -59,6 +67,7 @@ dependencies {
     testImplementation('org.junit.jupiter:junit-jupiter-params:5.3.1')
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.3.1')
     testRuntimeOnly('org.junit.platform:junit-platform-console:1.3.2')
+<<<<<<< HEAD
     //Dépendences pour parser
     antlr 'org.antlr:antlr4:4.7'
     //dépendance pour sous-projet
@@ -70,6 +79,8 @@ task junitConsole(type: JavaExec) {
     classpath sourceSets.test.runtimeClasspath
     main 'org.junit.platform.console.ConsoleLauncher'
     args '--scan-classpath'
+=======
+>>>>>>> de0fee4273805cce9fa490e60359f73ecae4d19b
 }
 
 
@@ -101,6 +112,7 @@ pmd {
     ignoreFailures = true
 }
 
+<<<<<<< HEAD
 publishing {
     publications {
         maven(MavenPublication) {
@@ -112,3 +124,12 @@ publishing {
         }
     }
 }
+=======
+jacoco {
+    reportsDir = file("$buildDir/jacocoReport")
+}
+
+jacocoTestReport {
+    dependsOn test
+}
+>>>>>>> de0fee4273805cce9fa490e60359f73ecae4d19b
