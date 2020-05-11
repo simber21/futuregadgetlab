@@ -1,0 +1,4 @@
+rootProject.name = 'minischeme-web'
+
+include ':minischeme-parser'
+project(':minischeme-parser').projectDir = new File(settingsDir, '../minischeme')
