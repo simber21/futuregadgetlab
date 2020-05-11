@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.junit.jupiter.api.*;
+
+import javax.management.modelmbean.InvalidTargetObjectTypeException;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -186,6 +189,115 @@ class EvaluatorTests {
     List<Object> program = List.of("tail", 2.0);
     Object last = evaluator.eval(program, env);
     assertEquals(List.of("Une seule valeur, utiliser HEAD"), last );
+  }
+
+  @Test void nandTest(){
+    /*
+    NAND = NOT (AND)
+    */
+    assertTrue((boolean) evaluator.eval(List.of("not", List.of("and", true, false)), env));
+    assertFalse((boolean) evaluator.eval(List.of("not", List.of("and", true, true)), env));
+  }
+
+
+  @Test void orTest(){
+    /*
+  L'operateur OR résulte de la négation des variables dans NAND.
+     OR = NOT(NAND) =  NOT( AND ((NOT P) (NOT Q)))
+   */
+    List<Object> program = List.of(
+            "begin",
+            List.of("define", "p", false),
+            List.of("define", "q", true),
+
+            List.of("not", List.of("and", (List.of("not", "p")), (List.of("not", "q")))));
+    assertTrue((boolean) evaluator.eval(program, env));
+  }
+
+
+  @Test void fauxOrTest(){
+    /*
+    Un test négatif de fonction OR
+   */
+    List<Object> program = List.of(
+            "begin",
+            List.of("define", "p", false),
+            List.of("define", "q", false),
+
+            List.of("not", List.of("and", (List.of("not", "p")), (List.of("not", "q")))));
+
+    assertFalse((boolean) evaluator.eval(program, env));
+  }
+
+  @Test void norTest() {
+    /*
+    Retourne false si au moins une variable est vrai
+     NOR = NOT(OR) où OR = NOT(NAND)
+     NOR = NOT(NOT(AND(NOT p, NOT q)))
+     */
+    List<Object> program = List.of(
+            "begin",
+            List.of("define", "p", false),
+            List.of("define", "q", false),
+
+            List.of("not", List.of("not", List.of("and", (List.of("not", "p")), (List.of("not", "q"))))));
+
+    assertTrue((boolean) evaluator.eval(program, env));
+  }
+
+  @Test void fauxNorTest(){
+    /*
+    Test négatif de NOR retourne false
+     */
+    List<Object> program = List.of(
+            "begin",
+            List.of("define", "p", true),
+            List.of("define", "q", false),
+
+            List.of("not", List.of("not", List.of("and", (List.of("not", "p")), (List.of("not", "q"))))));
+
+    assertFalse((boolean) evaluator.eval(program, env));
+  }
+
+  @Test void xorTest(){
+      /*
+  Fonction XOR
+  XOR = !p && q || p && !q
+  Donc, ![ !( !p && q) && !( p && !q)]
+   */
+
+    List<Object> program = List.of(
+            "begin",
+            List.of("define", "p", true),
+            List.of("define", "q", false),
+            List.of("not",
+                    List.of("and",
+                            List.of("not", List.of("and", "p", List.of("not", "q"))),
+                            List.of("not", List.of("and", List.of("not", "p"), "q"))
+                    )
+            )
+    );
+    assertTrue((boolean) evaluator.eval(program, env));
+  }
+
+  @Test void fauxXorTest() {
+    /*
+    Test négatif de XOR, retourne false
+   */
+
+    List<Object> program = List.of(
+            "begin",
+            List.of("define", "p", true),
+            List.of("define", "q", true),
+            List.of("not",
+                    List.of("and",
+                            List.of("not", List.of("and", "p", List.of("not", "q"))),
+                            List.of("not", List.of("and", List.of("not", "p"), "q"))
+                    )
+            )
+    );
+    assertFalse((boolean) evaluator.eval(program, env));
+
   }
 
 }
