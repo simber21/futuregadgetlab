@@ -139,13 +139,12 @@ class EvaluatorTests {
     assertEquals(120.0, result);
   }
 
-  /*
-  Teste pour voir si la réponse de l'opérateur AND dépend du positionnement de
-  la valeur booléenne.
-  Une grande liste a aussi été utilisé pour verifier la boucle for dans le
-  fichier GlobalEnvironment.java
- */
+
   @Test void andTest() {
+    /*
+    Retourne true si les deux variables sont vrai
+    Verifie si l'ordre de présentation des variables on un effet sur la réponse.
+    */
   assertFalse((boolean) evaluator.eval(List.of("and", true, false), env));
   assertTrue((boolean) evaluator.eval(List.of("and", true, true, true, true), env));
   assertFalse((boolean) evaluator.eval(List.of("and", false, true), env));
@@ -153,6 +152,10 @@ class EvaluatorTests {
   }
 
   @Test void notTest() {
+    /*
+    Retourne true si variable est false
+              false si true
+     */
   assertTrue((boolean) evaluator.eval(List.of("not", false), env));
   assertFalse((boolean) evaluator.eval(List.of("not", true), env));
   }
@@ -210,7 +213,8 @@ class EvaluatorTests {
             List.of("define", "p", false),
             List.of("define", "q", true),
 
-            List.of("not", List.of("and", (List.of("not", "p")), (List.of("not", "q")))));
+            List.of("not", List.of("and", (List.of("not", "p")), (List.of("not", "q"))))
+    );
     assertTrue((boolean) evaluator.eval(program, env));
   }
 
@@ -224,7 +228,8 @@ class EvaluatorTests {
             List.of("define", "p", false),
             List.of("define", "q", false),
 
-            List.of("not", List.of("and", (List.of("not", "p")), (List.of("not", "q")))));
+            List.of("not", List.of("and", (List.of("not", "p")), (List.of("not", "q"))))
+    );
 
     assertFalse((boolean) evaluator.eval(program, env));
   }
@@ -254,8 +259,8 @@ class EvaluatorTests {
             List.of("define", "p", true),
             List.of("define", "q", false),
 
-            List.of("not", List.of("not", List.of("and", (List.of("not", "p")), (List.of("not", "q"))))));
-
+            List.of("not", List.of("not", List.of("and", (List.of("not", "p")), (List.of("not", "q")))))
+    );
     assertFalse((boolean) evaluator.eval(program, env));
   }
 
@@ -265,7 +270,6 @@ class EvaluatorTests {
   XOR = !p && q || p && !q
   Donc, ![ !( !p && q) && !( p && !q)]
    */
-
     List<Object> program = List.of(
             "begin",
             List.of("define", "p", true),
@@ -284,7 +288,6 @@ class EvaluatorTests {
     /*
     Test négatif de XOR, retourne false
    */
-
     List<Object> program = List.of(
             "begin",
             List.of("define", "p", true),
@@ -297,7 +300,6 @@ class EvaluatorTests {
             )
     );
     assertFalse((boolean) evaluator.eval(program, env));
-
   }
 
 }
