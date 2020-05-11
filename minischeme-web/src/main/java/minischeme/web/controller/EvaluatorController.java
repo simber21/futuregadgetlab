@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+
 @Controller
 @RequestMapping("/")
 @lombok.extern.slf4j.Slf4j
@@ -48,8 +49,8 @@ public class EvaluatorController {
       final var source = command.getSource();
       log.info("CODE SOURCE RECU: <{}>", source);
 
-      final var result = "À FAIRE 🤔";
-      command.setResult(result);
+      String resultSource = "";
+      final var result = command.setResult(resultSource);
 
       redirectAttributes
         .addFlashAttribute("flash_success", "run_evaluation_flash_success_message")
@@ -78,10 +79,12 @@ class RunCommand implements Serializable {
   private String result = "";
 
   public @NotBlank @NotNull String getSource() {
+
     return source;
   }
 
   public @NotNull String setResult(String result) {
+
     return this.result = result;
   }
 }
