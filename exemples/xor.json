@@ -1,0 +1,12 @@
+["begin",
+
+  ;; Retourne true si les deux valeurs sont différentes
+  ;; En java, XOR = !p && q || p && !q
+  ;; NOT(NOT(AND ((AND (NOT p), q), (AND( p, (NOT q)))))
+
+
+  ["define", "p", true],
+  ["define", "q", false],
+
+  ["not", ["not", ["and", ["and",["not", "p"], "q"], ["and", "p", ["not", "q"]]]]]
+]
