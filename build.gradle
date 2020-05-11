@@ -20,7 +20,7 @@ plugins {
     id 'java'
     id 'application'
     // plugin ShadowJar pour créer un jar exécutable avec toutes les dépendences.
-    //id 'com.github.johnrengelman.shadow' version '5.2.0'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
     // Plugin pour l'outil d'analyse PMD
     id 'pmd'
     // Pour compiler le projet en format WAR
@@ -86,11 +86,12 @@ application {
     mainClassName = 'minischeme.Application'
 }
 
-//Pour mettre le nom de la classe avec methode main dans le fichier MANIFEST.MF du jar créer par default
 jar {
-    manifest {
-        attributes 'Main-Class': 'minischeme.Application'
-    }
+  manifest {
+    attributes (
+        'Main-class': 'minischeme.Application'
+        )
+  }
 }
 
 pmd {
