@@ -8,13 +8,13 @@
 [Install Gradle](https://gradle.org/install)
 
 <h5>Une fois Gradle et Java 11 installés, dans un terminal, se rendre à la racine du projet.</h5>
-Example: /home/simberg/mon-repertoire-git/futuregadgetlab
+Example: /home/simberg/mon-repertoire-git/futuregadgetlab/minischeme
 
 <h5>Pour compiler et générer un Jar exécutable, lancez la commande suivante:</h5>
 *gradle clean shadowJar*
 
 <h5>Pour exécuter le programme avec les fichiers d'examples fournis, lancez la commande suivante:</h5>
-*java -jar build/libs/futuregadgetlab-1.0-all.jar exemples/aire-cercle.json*
+*java -jar build/libs/futuregadgetlab*.jar exemples/booleans.json*
 
-Si tout fonctionne, le terminal devrait afficher **314.1592**.
+Si tout fonctionne, le terminal devrait afficher **true**.
 
