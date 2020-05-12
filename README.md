@@ -21,12 +21,29 @@ Si tout fonctionne, le terminal devrait afficher **314.1592**.
 <h5>Pour installer l'application web avec Vagrant il faut:</h5>
 
 <h5> Installation VirtualBox</h5>
-  sudo apt install virtualbox
+```
+ sudo apt install virtualbox
+```
+*<h5>Installation Vagrant</h5>
 
-* Installation Vagrant
+```
   sudo apt install vagrant
   sudo apt upgrade vagrant
-  mkdir base/
-  mv Vagrantfile base/
-  cd base/
-  vagrant init
+```
+<h5>Ensuite, dans le dossier ou se trouve le fichier Vagrantfile, effectuez:</h5>
+```
+vagrant up
+```
+<h5>Puis, sur la machine virtuelle, entrez `vagrant` comme utilisateur et `vagrant` comme mot de passe</h5>
+
+<h5>Une fois dans le ssh, faite:</h5>
+```
+cd minischeme-web/
+```
+Ensuite,
+```
+./gradlew bootRun
+```
+<h5>Ouvrez une page de navigateur en entrez `http://localhost:8080`</h5>
+
+
