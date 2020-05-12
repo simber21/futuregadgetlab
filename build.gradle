@@ -23,8 +23,6 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '5.2.0'
     // Plugin pour l'outil d'analyse PMD
     id 'pmd'
-
-    // Pour compiler le projet en format WAR
     id 'war'
     //plugin pour parser
     id 'antlr'
@@ -97,7 +95,7 @@ jar {
     attributes (
         'Main-class': 'minischeme.Application'
         )
-  }
+ }
 }
 
 pmd {
