@@ -1,0 +1,11 @@
+(begin
+
+  (define do-facto (lambda (n r)
+    (if (< n 2)
+           r
+           (do-facto (- n 1) (* n r)))))
+
+  (define facto (lambda (n)
+    (do-facto n 1)))
+
+  (facto 5))
