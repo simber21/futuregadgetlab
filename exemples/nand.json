@@ -1,10 +1,10 @@
-["begin",
+(begin
 
-  ;; Retourne true si au moins une variable est fausse
+  ;; Retourne #t si au moins une variable est fausse
   ;; NAND = NOT(AND)
 
 
-  ["define", "p", true],
-  ["define", "q", false],
+  (define, p #t),
+  (define q #f),
 
-  ["not"],["and", "p", "q"]]
+  (not) (and, p q))
