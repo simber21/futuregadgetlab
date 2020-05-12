@@ -18,7 +18,9 @@ Example: /home/simberg/mon-repertoire-git/futuregadgetlab
 
 Si tout fonctionne, le terminal devrait afficher **314.1592**.
 
-* Installation VirtualBox
+<h5>Pour installer l'application web avec Vagrant il faut:</h5>
+
+<h5> Installation VirtualBox</h5>
   sudo apt install virtualbox
 
 * Installation Vagrant
