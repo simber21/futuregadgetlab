@@ -1,0 +1,12 @@
+(begin
+  
+    (define do-sum (lambda (xs resultat)
+      (if (< (count xs) 1)
+        resultat
+        (do-sum (tail xs) (+ resultat (head xs))))))
+    
+    (define sum (lambda (xs)
+      (do-sum xs 0)))
+  
+    (sum (list 1 2 3 4 5)))
+  
