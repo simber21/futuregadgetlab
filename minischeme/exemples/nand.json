@@ -1,0 +1,10 @@
+(begin
+
+  ;; Retourne true si au moins une variable est fausse
+  ;; NAND = NOT(AND)
+
+
+  (define p #t)
+  (define q #f)
+
+  (not (and p q))

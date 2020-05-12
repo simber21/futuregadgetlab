@@ -1,0 +1,12 @@
+(begin
+
+  ;; Retourne true si aucune des deux valeeur sont vrai
+  ;; NOR = NOT(OR) où OR = NOT(NAND)
+  ;; NOR = NOT(NOT(AND(NOT p NOT q)))
+
+
+  (define p #t)
+  (define q #f)
+
+ (not (not (and (not p) (not q))))
+)
