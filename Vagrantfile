@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
     chmod 700 ~/.ssh
     ssh-keyscan -H github.com >> ~/.ssh/known_hosts
     ssh -T git@github.com
-    git clone git@github.com:simber21/futuregadgetlab.git
+    git clone -b ingrid git@github.com:simber21/futuregadgetlab.git
    
   SHELL
 end
