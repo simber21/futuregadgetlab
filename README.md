@@ -14,7 +14,7 @@ Example: /home/simberg/mon-repertoire-git/futuregadgetlab/minischeme
 *gradle clean shadowJar*
 
 <h5>Pour exécuter le programme avec les fichiers d'examples fournis, lancez la commande suivante:</h5>
-*java -jar build/libs/futuregadgetlab*.jar exemples/booleans.json*
+*java -jar build/libs/futuregadgetlab*.jar exemples/aire-cercle.json *
 
-Si tout fonctionne, le terminal devrait afficher **true**.
+Si tout fonctionne, le terminal devrait afficher **314.1592**.
 
