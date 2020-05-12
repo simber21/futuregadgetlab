@@ -1,7 +1,0 @@
-["begin",
-
-    ["define", "p", true],
-    ["define", "q", false],
-  
-    ["and", "p", "p", ["not", "q"], ["<", 1.0, 2.0]]]
-  
