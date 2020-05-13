@@ -41,8 +41,8 @@ public class Evaluator {
       des tests (et du GlobalEnvironment) sont des double.
       */
       double counter = 0.0;
-      for( int k=1; k < sexpr.size(); k++) {
-        counter = counter + 1;
+      for( int k=0; k < tail.size(); k++) {
+        counter = counter + 1.0;
       }
       return counter;
     }
@@ -61,8 +61,8 @@ public class Evaluator {
       */
       List <Object> branch = List.of("Une seule valeur, utiliser HEAD");
 
-      if (sexpr.size() > 2) {
-         branch = sexpr.subList(2, sexpr.size());
+      if (tail.size() > 1) {
+         branch = tail.subList(1, tail.size());
       }
       return branch;
     }
