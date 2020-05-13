@@ -78,7 +78,6 @@ public class GlobalEnvironment {
       return result;
     });
 
-
     return env;
   }
 }
