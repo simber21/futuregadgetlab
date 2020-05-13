@@ -15,6 +15,7 @@ Voici les instructions à suivre pour chaque méthode:
 <h5>Par la suite, Gradle doit être installé sur votre PC:</h5>
 [Install Gradle](https://gradle.org/install)
 
+
 <h5>Une fois Gradle et Java 11 installés, dans un terminal, se rendre à la racine du projet minischeme.</h5>
 Example: /home/simberg/mon-repertoire-git/futuregadgetlab/minischeme
 
@@ -51,4 +52,5 @@ Example: /home/simberg/mon-repertoire-git/futuregadgetlab
 vagrant up
 
 Ouvrez votre fureteur et rendez vous à l'adresse: http://localhost:8080
+
 

@@ -1,0 +1,11 @@
+(begin
+
+    ;; Retourne true si au moins une variable est true
+    ;; OR = NOT(NAND) où NAND = NOT(AND)
+
+    (define p #t)
+    (define q #f)
+
+    (not (not and (not p) (not q)))
+
+    )

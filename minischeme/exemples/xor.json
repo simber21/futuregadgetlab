@@ -1,0 +1,16 @@
+(begin
+
+  ;; Retourne true si les deux valeurs sont différentes
+  ;; En java, XOR = !p && q || p && !q
+  ;; On obtient donc: ![ !( !p && q) && !( p && !q)]
+
+
+  (define p #t)
+  (define q #f)
+
+  (not
+    (and
+      (not (and (not p ) q) (not (and p (not q)))
+    )
+  )
+)
